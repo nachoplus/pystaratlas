@@ -1,0 +1,50 @@
+version = 1
+name = "orion-constellation"
+
+# Only the constellation name is needed: the map is centred on Orion and
+# includes the constellations that share its boundary.
+[region]
+kind = "constellation"
+name = "Orión"
+
+# The target centre (lon_0/lat_0) is filled in from the constellation data.
+[projection]
+proj = "stere"
+
+[canvas]
+size = [1400, 1000]
+background = "#fdfdfd"
+
+[output]
+formats = ["pdf", "svg", "html", "png"]
+dir = "build/orion-constellation"
+
+[[layers]]
+kind = "catalog"
+source = "hipparcos"
+labels = true
+filter = { mag_lt = 7.5, label_mag_lt = 3.5 }
+
+[[layers]]
+kind = "catalog"
+source = "ngc"
+filter = { mag_lt = 9 }
+
+[[layers]]
+kind = "catalog"
+source = "deepspace"
+labels = true
+
+[[layers]]
+kind = "grid"
+frame = "equatorial"
+step = 5
+
+[[layers]]
+kind = "constellations"
+bounds = true
+figures = true
+labels = true
+
+[theme]
+include = "themes/claro.toml"
