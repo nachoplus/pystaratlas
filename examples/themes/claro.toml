@@ -1,0 +1,79 @@
+version = 1
+
+[colors]
+background = "#fdfdfd"
+foreground = "#111111"
+
+[styles.stars]
+opacity = 0.95
+
+[styles.ngc.galaxy]
+stroke = "#2b6cb0"
+fill = "#2b6cb0"
+opacity = 0.9
+
+[styles.ngc.globular]
+stroke = "#b83227"
+fill = "#b83227"
+opacity = 0.9
+
+[styles.ngc.open]
+stroke = "#2f855a"
+fill = "#2f855a"
+opacity = 0.9
+
+[styles.ngc.nebula]
+stroke = "#4f46e5"
+fill = "#4f46e5"
+opacity = 0.9
+
+[styles.ngc.planetary]
+stroke = "#6b46c1"
+fill = "#6b46c1"
+opacity = 0.9
+
+[styles.ngc.star]
+stroke = "#b7791f"
+fill = "#b7791f"
+opacity = 0.9
+
+[styles.ngc.generic]
+stroke = "#4a5568"
+fill = "#4a5568"
+opacity = 0.9
+
+[styles.grid.equatorial]
+stroke = "#555555"
+opacity = 0.85
+width = 1.0
+
+[styles.constellations]
+stroke = "#404090"
+opacity = 0.95
+width = 0.8
+
+# Stellarium-like stick figures are stronger than the lookup boundaries.
+[styles.constellation-figures]
+stroke = "#404090"
+opacity = 0.95
+width = 1.1
+
+[styles.constellation-bounds]
+stroke = "#8a8aa8"
+opacity = 0.35
+width = 0.5
+
+[styles.constellation-labels]
+fill = "#202060"
+
+[styles.star-labels]
+fill = "#202060"
+size = 9.0
+
+[styles.deepspace-markers]
+fill = "#9b2c2c"
+opacity = 0.9
+
+[styles.deepspace-labels]
+fill = "#742a2a"
+size = 7.5

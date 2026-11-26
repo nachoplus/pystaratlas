@@ -1,0 +1,66 @@
+version = 1
+name = "Orión"
+
+[region]
+kind = "equatorial"
+frame = "icrs"
+ra = [75, 105]
+dec = [-15, 20]
+
+[projection]
+# Stereographic is conformal and keeps shapes undistorted over a single
+# constellation field, unlike the all-sky Mollweide projection.
+proj = "stere"
+
+[projection.params]
+R = 1
+lon_0 = 90
+lat_0 = 2.5
+
+[canvas]
+size = [1600, 1000]
+background = "#fdfdfd"
+
+[output]
+formats = ["pdf", "svg", "html", "png"]
+dir = "build/orion"
+# PNG is rendered at 3x the canvas size for readable labels and symbols.
+png_scale = 3
+
+[observer]
+city = "Madrid"
+date = "2026-11-25T21:00:00Z"
+
+[[layers]]
+kind = "catalog"
+source = "hipparcos"
+labels = true
+filter = { mag_lt = 8, label_mag_lt = 3.0 }
+
+[[layers]]
+kind = "catalog"
+source = "ngc"
+# Every NGC object type is drawn in this example (no magnitude or type filter).
+
+[[layers]]
+kind = "catalog"
+source = "deepspace"
+labels = true
+
+[[layers]]
+kind = "objects"
+include = "objects/skymaps.toml"
+
+[[layers]]
+kind = "grid"
+frame = "equatorial"
+step = 10
+
+[[layers]]
+kind = "constellations"
+bounds = true
+figures = true
+labels = true
+
+[theme]
+include = "themes/claro.toml"
